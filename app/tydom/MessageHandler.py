@@ -550,6 +550,7 @@ class MessageHandler:
                             attr_door['door_name'] = print_id
                             attr_door['name'] = print_id
                             attr_door['device_type'] = 'sensor'
+                            attr_door['device_class'] = 'door'
                             attr_door['element_name'] = element_name
                             attr_door[element_name] = element_value
 
@@ -558,9 +559,10 @@ class MessageHandler:
                             attr_window['device_id'] = device_id
                             attr_window['endpoint_id'] = endpoint_id
                             attr_window['id'] = str(device_id) + '_' + str(endpoint_id)
-                            attr_window['door_name'] = print_id
+                            attr_window['window_name'] = print_id
                             attr_window['name'] = print_id
                             attr_window['device_type'] = 'sensor'
+                            attr_window['device_class'] = 'window'
                             attr_window['element_name'] = element_name
                             attr_window[element_name] = element_value
 
@@ -593,6 +595,7 @@ class MessageHandler:
                             attr_gate['switch_name'] = print_id
                             attr_gate['name'] = print_id
                             attr_gate['device_type'] = 'switch'
+                            attr_gate['device_class'] = 'garage_door'
                             attr_gate[element_name] = element_value
 
                     if type_of_id == 'conso':
@@ -629,22 +632,22 @@ class MessageHandler:
                     if type_of_id == 'water':
                         if element_name in deviceWaterKeywords and element_validity == 'upToDate':
                             attr_water['device_id'] = device_id
-                            attr_water['device_class'] = 'moisture'
                             attr_water['endpoint_id'] = endpoint_id
                             attr_water['id'] = str(device_id) + '_' + str(endpoint_id)
                             attr_water['name'] = print_id
                             attr_water['device_type'] = 'sensor'
+                            attr_water['device_class'] = 'moisture'
                             attr_water['element_name'] = element_name
                             attr_water[element_name] = element_value
 
                     if type_of_id == 'smoke':
                         if element_name in deviceSmokeKeywords and element_validity == 'upToDate':
                             attr_smoke['device_id'] = device_id
-                            attr_smoke['device_class'] = 'smoke'
                             attr_smoke['endpoint_id'] = endpoint_id
                             attr_smoke['id'] = str(device_id) + '_' + str(endpoint_id)
                             attr_smoke['name'] = print_id
                             attr_smoke['device_type'] = 'sensor'
+                            attr_smoke['device_class'] = 'smoke'
                             attr_smoke['element_name'] = element_name
                             attr_smoke[element_name] = element_value
 
@@ -655,6 +658,7 @@ class MessageHandler:
                             attr_ukn['id'] = str(device_id) + '_' + str(endpoint_id)
                             attr_ukn['name'] = print_id
                             attr_ukn['device_type'] = 'sensor'
+                            attr_ukn['device_class'] = 'motion'
                             attr_ukn['element_name'] = element_name
                             attr_ukn[element_name] = element_value
                         elif element_name in deviceDoorKeywords and element_validity == 'upToDate':
@@ -664,6 +668,7 @@ class MessageHandler:
                                 device_id) + '_' + str(endpoint_id)
                             attr_ukn['name'] = print_id
                             attr_ukn['device_type'] = 'sensor'
+                            attr_ukn['device_class'] = 'door'
                             attr_ukn['element_name'] = element_name
                             attr_ukn[element_name] = element_value
 
