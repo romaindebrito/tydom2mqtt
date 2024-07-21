@@ -69,7 +69,7 @@ class Light:
         try:
             await self.update_sensors()
         except Exception as e:
-            logger.error("light sensors Error :")
+            logger.error("Light sensors Error :")
             logger.error(e)
 
         self.level_topic = light_level_topic.format(
